@@ -1,16 +1,18 @@
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
 [user]
 	name = Andrew Larssen
 	email = al@larssen.org
 [push]
 	default = simple
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [alias]
 	co = checkout
 	br = branch
 	ci = commit
 	st = status
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	unstage = reset HEAD --
 	last = log -1 HEAD
