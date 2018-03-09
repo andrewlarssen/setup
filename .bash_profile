@@ -1,5 +1,6 @@
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(jenv init -)"
 
 # Git Completion
 if [ -f ~/.git-completion.bash ]; then
